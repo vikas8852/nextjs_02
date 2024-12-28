@@ -1,4 +1,5 @@
 "use client"
+import Product from "./product_s";
 import {useEffect,useState} from 'react'
 export default function Page(){
     const[products,setProducts]=useState([]);
@@ -20,11 +21,15 @@ export default function Page(){
     return (
         <div>
         <h1>Product List</h1>
-        <ul>
+     
             {products.map((product) => (
-                <li key={product.id}> title :{product.title}, id: {product.id}</li>
+                <div key={product.id}>
+                <h3 > title :{product.title}, id: {product.id}</h3>
+                <Product price={product.price}/>
+                </div>
             ))}
-        </ul>
+          
+       
     </div>
     )
 
